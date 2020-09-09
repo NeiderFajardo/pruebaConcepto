@@ -1,0 +1,24 @@
+.imagen{
+    float:left;  
+    width:40%; 
+    height:400px; 
+    position: fixed;
+}
+  
+::ng-deep .mat-tab-label{
+    color: black !important;
+}
+
+.contenido{
+    float:right; 
+    width:60%; 
+    height: 400px;
+    background-color: white;
+}
+
+.poster{
+    margin-left: 50px;
+    width: 60%;
+    height: 100%;
+    display: block;
+  }

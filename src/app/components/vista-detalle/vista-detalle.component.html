@@ -1,0 +1,16 @@
+<div class="principal">
+    <div class="imagen">
+        <img  class="poster" [src]="imagenSerie" alt="">
+    </div>
+    <div class="contenido">
+        <mat-tab-group mat-align-tabs="start">
+            <div *ngFor="let temporada of temporadas; index as i">
+                <mat-tab [label]="temporada.name" *ngIf="mostrarEpisodios">
+                        <app-vista-episodios [episodios]="episodioTemporada"  [temporada]="i" ></app-vista-episodios>
+                </mat-tab>
+            </div>
+
+          </mat-tab-group>
+          
+    </div>
+</div>

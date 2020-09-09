@@ -1,0 +1,53 @@
+<div class="content" >
+    <div class="navbar">
+        <form>
+            <input class="search-text" type="text" name="search" aria-describedby="search-text" (keyup.enter)="aBuscar($event)" (keypress)="omit_special_char($event)"
+                placeholder="" >
+        </form>
+    </div>
+    <ng-template #contenido let-modal>
+        <div class="modal-header">
+            <h2 class="modal-title"> {{ tituloContenido }} </h2>
+            <button class="close" aria-label="close" type="button" (click)="modal.close()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <app-vista-detalle  [contenido]="idSerie"></app-vista-detalle> 
+        </div>  
+    </ng-template>
+    <div
+    class="search-result"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+   (scrolled)="onScroll()" 
+    >
+    <h2 *ngIf="noResult">{{ alerta }}</h2>
+        <ul>
+            <li *ngFor="let result of resultados">
+                <div class="card" (dblclick)="irContenido(contenido, result.Id, result.Tipo, result.Nombre)">
+                    
+                    <img class="poster" [src]="result.Imagen" />
+                    <div class="center">
+                        <p> {{ result.Nombre }} </p>
+    
+                    </div>
+                    <div class="overlay">
+                        <div class="text">
+                            {{ result.Nombre }}
+                            <br>
+                            <p>Ratin: {{ result.Rating }}</p>
+    
+                        </div>
+                        
+                    </div>
+                </div>
+            </li>
+            
+        </ul>
+    
+    </div>
+
+
+</div>
