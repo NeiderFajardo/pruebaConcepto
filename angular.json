@@ -71,7 +71,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-             "budgets": [
+              "budgets": [
                 {
                   "type": "initial",
                   "maximumWarning": "2mb",
@@ -145,6 +145,10 @@
               "devServerTarget": "pruebaConcepto:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
