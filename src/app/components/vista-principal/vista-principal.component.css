@@ -15,11 +15,22 @@
   }
   
   ::ng-deep input.search-text:focus {
-    width: 40%;
+    width: 120%;
 }
+
+.logo{
+  height: 70px;
+  width: 80px;
+}
+
 .content{
     padding: 10px;
     margin: 0px;
+}
+
+.mensaje{
+  color:slategray;
+  text-align: center;
 }
 
 .sticky{
